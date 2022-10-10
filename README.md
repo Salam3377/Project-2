@@ -8,6 +8,9 @@ Users able to:
 - create an account 
 - log in
 - log out
+- add to cart
+- remove from cart
+- use discounts
 
 Some very Basic plan:
 
