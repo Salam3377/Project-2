@@ -4,13 +4,19 @@
  coffeeShop, contactUS and user model, which is going to be able to sign up, log in/out, and where account holders can have some more options such as, order some products online, and get some extra discounts and bonuses.
 
 
-Users able to: 
+User Stories: 
 - create an account 
 - log in
 - log out
-- add to cart
+- Check through menu
+- add menu items to cart
+- update cart
 - remove from cart
-- use discounts
+
+
+Stretch goal: 
+- apply discounts
+- menu item quantity(changes when added or removed from cart)
 
 Some very Basic plan:
 
@@ -24,10 +30,10 @@ Some very Basic plan:
 Here is ERD(Entity Relationship Diagram):
 
 
-![](imgs/ERD.jpeg)
+![](imgs/newERD.jpeg)
 
 
 My work plan for the week:
-- day 1-4 work on functionality of BackEnd codes , JS, Node, Express, Mongosh
+- day 1-4 work on functionality of BackEnd codes , JS, Node, Express, Mongoose
 - day 4-6 work on liquid js, bootstrap, FrontEnd connecting with BackEnd
 - day 6-7 styling using CSS, some bootstrap
