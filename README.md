@@ -8,12 +8,14 @@
 
 Some very Basic plan:
 
-![](../../../../../Desktop/project2%20preparations/signup%20page%20project2.jpeg)
-![](../../../../../Desktop/project2%20preparations/login%20page%20project2.jpeg)
-![](../../../../../Desktop/project2%20preparations/Main%20Page%20project2.jpeg)
-![](../../../../../Desktop/project2%20preparations/menu%20page%20project%202.jpeg)
+
+![](imgs/signup%20page%20project2.jpeg)
+![](imgs/login%20page%20project2.jpeg)
+![](imgs/Main%20Page%20project2.jpeg)
+![](imgs/menu%20page%20project%202.jpeg)
 
 
 Here is ERD(Entity Relationship Diagram):
 
-![](../../../../../Desktop/ERD.jpeg)
+
+![](imgs/ERD.jpeg)
