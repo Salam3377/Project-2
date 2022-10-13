@@ -1,10 +1,12 @@
 {% layout 'layout.liquid'%}
 {% block content %}
 <div>
-    <h2 id="menu-header" class="display-6">All Menu</h2>
+    <h2 id="menu-header" class="display-5">All Menu</h2>
+    <hr>
+    <h1 class="menu-names">Coffee</h1>
     <div class="row">
         {% for item in items %}
-        <div class="card" style="width: 18rem;">
+        <div class="card" >
             <h5 class="card-header">{{ item.title }}</h5>
             <div class="card-body">
                 <h5 class="card-title">
@@ -19,12 +21,16 @@
                 <p class="card-text">
                     {{ item.category }}
                 </p>
+                {%if loggedIn%}
                 <a href="/menu/new" class="btn btn-info">
-                    create(add) {{ example.title }} 
+                    add {{ example.title }} 
                 </a>
+                {%endif%}
             </div>
         </div>
         {% endfor %}
+        <hr>
+        <h1 class="menu-names">Desserts</h1>
     </div>
 </div>
 {% endblock %}

@@ -1,5 +1,9 @@
+body {
+    background-color: white;
+}
+
 #main-page {
-    align-items: center;
+    /* align-items: center; */
     color: red;
 }
 #navbarNav {
@@ -13,4 +17,57 @@
 }
 #menu-header {
     text-align: center;
+}
+.menu-names {
+    text-align: center;
+}
+
+.card {
+    background-color: rgb(42, 41, 41);
+    color: beige;
+    margin: 10px;
+    border-radius: 5%;
+    width: auto;
+    height: 3rem; 
+}
+
+.card-body {
+    display: flex;
+    padding: 0;
+}
+.card-text {
+    padding-left: 10px;
+}
+
+.btn-info {
+    background-color: beige;
+    position: absolute;
+    right: -60px;
+    bottom: 5px;
+    border-color: black;
+}
+.btn-info:hover {
+    background-color: rgb(220, 196, 160);
+}
+.card-header {
+    padding: 0px;
+}
+.row {
+    display: block;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;;
+}
+
+.show {
+    background-color: rgb(42, 41, 41);
+}
+.dropdown-item {
+    color: beige;
+}
+.dropdown-toggle {
+    background-color: rgb(42, 41, 41);
+}
+.dropdown-toggle:hover {
+    background-color: rgb(56, 54, 54);
 }
