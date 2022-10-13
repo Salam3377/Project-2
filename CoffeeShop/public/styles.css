@@ -2,3 +2,15 @@
     align-items: center;
     color: red;
 }
+#navbarNav {
+    justify-content: right;
+}
+
+#main-page {
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+}
+#menu-header {
+    text-align: center;
+}

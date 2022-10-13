@@ -1,7 +1,7 @@
 {% layout 'layout.liquid'%}
 {% block content %}
 <div>
-    <h2 class="display-6">All Menu</h2>
+    <h2 id="menu-header" class="display-6">All Menu</h2>
     <div class="row">
         {% for item in items %}
         <div class="card" style="width: 18rem;">
@@ -19,6 +19,9 @@
                 <p class="card-text">
                     {{ item.category }}
                 </p>
+                <a href="/menu/new" class="btn btn-info">
+                    create(add) {{ example.title }} 
+                </a>
             </div>
         </div>
         {% endfor %}

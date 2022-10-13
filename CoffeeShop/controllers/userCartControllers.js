@@ -2,6 +2,7 @@
 ////////////////////////////////////////
 const express = require("express")
 const MenuItems = require("../models/menuItems")
+const Cart = require('../models/userCart')
 
 /////////////////////////////////////////
 // Create Router
@@ -11,76 +12,88 @@ const router = express.Router()
 /////////////////////////////////////////////
 // Routes
 ////////////////////////////////////////////
-// POST
-// only loggedIn users can post comments
-router.post("/:fruitId", (req, res) => {
-    const fruitId = req.params.fruitId
 
-    if (req.session.loggedIn) {
-        // we want to adjust req.body so that the author is automatically assigned
-        req.body.author = req.session.userId
-    } else {
-        res.sendStatus(401)
-    }
-    // find a specific fruit
-    MenuItems.findById(fruitId)
-        // do something if it works
-        //  --> send a success response status and maybe the comment? maybe the fruit?
-        .then(fruit => {
-            // push the comment into the fruit.comments array
-            fruit.comments.push(req.body)
-            // we need to save the fruit
-            return fruit.save()
-        })
-        .then(fruit => {
-            // res.status(200).json({ fruit: fruit })
-            res.redirect(`/fruits/${fruit.id}`)
-        })
-        // do something else if it doesn't work
-        //  --> send some kind of error depending on what went wrong
-        .catch(err => res.redirect(`/error?error=${err}`))
+//show all
+router.get('/', (req,res) => {
+    Cart.find({})
+		.then(items => {
+			const username = req.session.username
+			const loggedIn = req.session.loggedIn
+			//const userId = req.session.userId
+			res.render('cart/index', { items, username, loggedIn })
+		})
+		.catch(error => {
+			res.redirect(`/error?error=${error}`)
+		})
 })
 
-// DELETE
-// only the author of the comment can delete it
-router.delete('/delete/:fruitId/:commId', (req, res) => {
-    // isolate the ids and save to vars for easy ref
-    const fruitId = req.params.fruitId 
-    const commId = req.params.commId
-    // get the fruit
-    MenuItems.findById(fruitId)
-        .then(fruit => {
-            // get the comment
-            // subdocs have a built in method that you can use to access specific subdocuments when you need to.
-            // this built in method is called .id()
-            const theComment = fruit.comments.id(commId)
-            console.log('this is the comment that was found', theComment)
-            // make sure the user is logged in
-            if (req.session.loggedIn) {
-                // only let the author of the comment delete it
-                if (theComment.author == req.session.userId) {
-                    // find some way to remove the comment
-                    // here's another built in method
-                    theComment.remove()
-                    fruit.save()
-                    res.redirect(`/fruits/${fruit.id}`)
-                    // return the saved fruit
-                    // return fruit.save()
-                } else {
-                    const err = 'you%20are%20not%20authorized%20for%20this%20action'
-                    res.redirect(`/error?error=${err}`)
-                }
-            } else {
-                const err = 'you%20are%20not%20authorized%20for%20this%20action'
-                res.redirect(`/error?error=${err}`)
-            }
-        })
-        // send an error if error
-        .catch(err => res.redirect(`/error?error=${err}`))
 
+//show mine
+router.get('/mine', (req, res) => {
+    const { username, userId, loggedIn } = req.session
+	Cart.find({ owner: userId })
+		.then(items => {
+			res.render('cart/index', { items, username, loggedIn })
+		})
+		.catch(error => {
+			res.redirect(`/error?error=${error}`)
+		})
 })
 
-//////////////////////////////////////////
-// Export the Router
-//////////////////////////////////////////
+router.get('/new', (req, res) => {
+	const { username, userId, loggedIn } = req.session
+	res.render('cart/new', { username, loggedIn })
+})
+
+//create
+router.post('/', (req,res) => {
+	req.body.toStay = req.body.toStay === 'on' ? true : false
+    req.body.owner = req.session.userId
+	Cart.create(req.body)
+		.then(cart => {
+			console.log('this was returned from create', cart)
+			res.redirect('/cart')
+		})
+		.catch(error => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
+//show needs work here
+// router.get('/:id', (req, res) => {
+// 	// we need to get the id
+// 	const itemId = req.params.id
+// 	MenuItems.findById(itemId)
+// 		.then(item => {
+// 			item.items.push(req.body)
+// 			res.render('examples/edit', { example })
+// 		})
+// 		.catch((error) => {
+// 			res.redirect(`/error?error=${error}`)
+// 		})
+// })
+
+router.get('/:id', (req, res) => {
+	const itemId = req.params.id
+	Cart.findById(itemId)
+		.then(item => {
+            const {username, loggedIn, userId} = req.session
+			res.render('cart/show', { item, username, loggedIn, userId })
+		})
+		.catch((error) => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
+
+//Delete
+router.delete('/:id', (req, res) => {
+	const Id = req.params.id
+	Cart.findByIdAndRemove(Id)
+		.then(item => {
+			res.redirect('/cart/mine')
+		})
+		.catch(error => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
+
 module.exports = router

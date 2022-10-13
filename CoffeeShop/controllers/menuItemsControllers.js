@@ -57,13 +57,13 @@ router.get('/new', (req, res) => {
 
 // create -> POST route that actually calls the db and makes a new document
 router.post('/', (req, res) => {
-	req.body.ready = req.body.ready === 'on' ? true : false
+	//req.body.ready = req.body.ready === 'on' ? true : false
 
 	req.body.owner = req.session.userId
 	MenuItems.create(req.body)
 		.then(items => {
 			console.log('this was returned from create', items)
-			res.redirect('/menuItems')
+			res.redirect('/menu')
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
@@ -90,7 +90,7 @@ router.put('/:id', (req, res) => {
 
 	MenuItems.findByIdAndUpdate(itemsId, req.body, { new: true })
 		.then(items => {
-			res.redirect(`/examples/${items.id}`)
+			res.redirect(`/menu/${items.id}`)
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
@@ -103,7 +103,7 @@ router.get('/:id', (req, res) => {
 	MenuItems.findById(itemsId)
 		.then(items => {
             const {username, loggedIn, userId} = req.session
-			res.render('examples/show', { items, username, loggedIn, userId })
+			res.render('menu/show', { items, username, loggedIn, userId })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
@@ -115,7 +115,7 @@ router.delete('/:id', (req, res) => {
 	const itemsId = req.params.id
 	MenuItems.findByIdAndRemove(itemsId)
 		.then(items => {
-			res.redirect('/examples')
+			res.redirect('/menu')
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)

@@ -1,0 +1,30 @@
+{% layout 'layout.liquid'%}
+{% block content %}
+<div>
+    <h2 class="display-6">cart </h2>
+    <div class="row">
+        {% for item in items %}
+        <div class="card" style="width: 18rem;">
+            <h5 class="card-header">{{ item.title }}</h5>
+            <div class="card-body">
+                <h5 class="card-title">
+                    to stay?: {{ item.toStay }}
+                </h5>
+                <p class="card-text">
+                    owner: {{ item.owner }}
+                </p>
+                <a href="/cart/{{ item.id }}" class="btn btn-info">
+                    View {{ item.title }}
+                </a>
+                {%- comment -%} <p class="card-text">
+                    Amount: {{ example.amount }}
+                </p> {%- endcomment -%}
+                {%- comment -%} <a href="/cart/{{ item.id }}" class="btn btn-info">
+                    View {{ example.title }}
+                </a> {%- endcomment -%}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

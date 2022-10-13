@@ -1,0 +1,25 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+<div class="container-sm">
+    <form action="/cart" method="POST">
+        <fieldset>
+            <legend>Create New items</legend>
+            <label class="form-label">Owner: </label>
+            <input 
+                type="text" 
+                name="owner" 
+                placeholder="enter here"
+                class="form-control"
+            >
+            
+            <label class="form-label">to stay:</label>
+            <input 
+                type="checkbox" 
+                name="toStay" 
+                class="form-check-input"
+            >
+        </fieldset>
+        <input type="submit" value="add" class="btn btn-success">
+    </form>
+</div>
+{% endblock %}

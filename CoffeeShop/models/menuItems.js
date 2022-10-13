@@ -18,7 +18,7 @@ const menuItemsSchema = new Schema(
         },
 
 		owner: {
-			type: Schema.Types.ObjectID,
+			type: Schema.Types.ObjectId,
 			ref: 'User',
 		}
 	},
