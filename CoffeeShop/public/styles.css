@@ -2,19 +2,30 @@ body {
     background-color: white;
 }
 
-#main-page {
-    /* align-items: center; */
-    color: red;
-}
+
 #navbarNav {
     justify-content: right;
 }
+#cart {
+    padding: 1rem;
+}
 
+/*this is home page btn*/
 #main-page {
   transform: translateX(-50%);
   left: 50%;
   position: absolute;
+  padding: 7px;
+  color: red;
+  
+  transition: 0.3s;
+  
 }
+#main-page:hover {
+    background-color: white;
+    
+}
+
 #menu-header {
     text-align: center;
 }
@@ -55,7 +66,7 @@ body {
 .row {
     display: block;
     transform: translateX(-50%);
-    left: 50%;
+    left: 50.5%;
     position: absolute;;
 }
 
