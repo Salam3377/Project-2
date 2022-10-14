@@ -8,6 +8,9 @@ body {
 #cart {
     padding: 1rem;
 }
+.nav-link {
+    padding: 1rem;
+}
 
 /*menu dropdown btn*/
 .show {
@@ -30,18 +33,34 @@ body {
   position: absolute;
   padding: 7px;
   color: red;
+  font-family: 'Marck Script', cursive;
+  font-family: 'Poiret One', cursive;
+  font-size: 2rem;
   transition: 0.3s;
 }
 #main-page:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+/*nav bar right side buttons hover*/
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+#cart:hover {
     background-color: rgba(255,255,255,0.1);
 }
 
 /*menu*/
 #menu-header {
     text-align: center;
+    font-family: 'Marck Script', cursive;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
 }
 .menu-names {
     text-align: center;
+    font-family: 'Marck Script', cursive;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
 }
 .card {
     background-color: rgb(42, 41, 41);
@@ -50,6 +69,9 @@ body {
     border-radius: 5%;
     width: auto;
     height: 3rem; 
+    font-family: 'Marck Script', cursive;
+    font-family: 'Poiret One', cursive;
+    font-size: larger;
 }
 .card-body {
     display: flex;
@@ -86,10 +108,17 @@ body {
     margin: auto;
     position: relative;
     text-align: center;
+    
 }
 #main-header {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: 'Marck Script', cursive;
+    font-family: 'Poiret One', cursive;
+    font-size: 3rem;
+    background-color: var(--bs-body-color);
+    color: rgb(220, 196, 160);
+    margin: 1px 3px 20px;
 }
 #main-img {
     margin-bottom: 2rem;
@@ -125,13 +154,14 @@ body {
     text-align: center;
     background-color: rgb(42, 41, 41);
     color: rgb(220, 196, 160);
-    font-size: 25px;
+    font-size: 1.7rem;
     padding-top: 20px;
+    border-top: 3px solid rgb(220, 196, 160);;
     
 }
-.footer-info {
-    padding-right: 350px;
-    padding-left: 350px;
+.footer-coffee {
+    font-family: 'Marck Script', cursive;
+    font-family: 'Poiret One', cursive;
 }
 
 /*about us page*/
