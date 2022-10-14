@@ -1,7 +1,25 @@
 {% layout "layout.liquid" %}
 {% block content %}
-
-    <h1>this is about us page</h1>
-
-    <footer class="footer"> here is footer</footer>
+    <div id="about-us-div">
+         <article id="about-us-art">
+             <h1 id="about-us-header">Coffee Shop</h1>
+            <h3 id="about-us-sub"><span id="about-us-span">About Us</span></h3>
+            <p id="about-us-text">    
+               Coffee Shop offers a unique coffee house environment. We are not only a place to drop in and get your morning cup of coffee
+            (although you are more than welcome to do that), we are a place where you can sit down and enjoy that cup of perfection.
+            If you need to work, we have a seating area created specifically for you. If you need to rest, we have a soft-seating area in front of a stone fire place
+            that is perfect for your mind and body. We offer a delicious variety of coffee made by our professionally trained baristas. 
+            We have everything from classic coffee to our house made specialty beverages.  All of our sauces & syrups are made in-house with all natural ingredients (no chemicals or preservatives)
+            ensuring you the highest quality in taste & health.  You can complete your coffee with one of our delicious desserts made by our very own baker.
+            We look forward to serving you at Coffee Shop!
+            </p>
+         </article>
+        {%- comment -%} <img id="about-us-img" src="https://img2.goodfon.com/wallpaper/nbig/a/9e/kofe-knigi-ochki.jpg">
+        <img id="about-us-img" src="https://www.liveenhanced.com/wp-content/uploads/2020/03/6062f97988279.jpg"> {%- endcomment -%}
+        {%- comment -%} <img id="about-us-img" src="https://free4kwallpapers.com/uploads/originals/2015/05/14/coffee-and-books.jpg"> {%- endcomment -%}
+    </div> 
+    <footer class="footer">
+        <span class="footer-info" >Phone number: &nbsp 333-777-13-57</span>
+        <span class="footer-info">Address: &nbsp Donut street 777</span>
+    </footer>
 {% endblock %}
