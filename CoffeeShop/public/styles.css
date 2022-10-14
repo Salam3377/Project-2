@@ -1,8 +1,7 @@
 body {
-    background-color: white;
+    background-color: rgb(205, 202, 202);
 }
-
-
+/*navbar*/
 #navbarNav {
     justify-content: right;
 }
@@ -10,29 +9,40 @@ body {
     padding: 1rem;
 }
 
-/*this is home page btn*/
+/*menu dropdown btn*/
+.show {
+    background-color: rgb(42, 41, 41);
+}
+.dropdown-item {
+    color: beige;
+}
+.dropdown-toggle {
+    background-color: rgb(42, 41, 41);
+}
+.dropdown-toggle:hover {
+    background-color: rgb(56, 54, 54);
+}
+
+/*this is home-page BUTTON*/
 #main-page {
   transform: translateX(-50%);
   left: 50%;
   position: absolute;
   padding: 7px;
   color: red;
-  
   transition: 0.3s;
-  
 }
 #main-page:hover {
-    background-color: white;
-    
+    background-color: rgba(255,255,255,0.1);
 }
 
+/*menu*/
 #menu-header {
     text-align: center;
 }
 .menu-names {
     text-align: center;
 }
-
 .card {
     background-color: rgb(42, 41, 41);
     color: beige;
@@ -41,7 +51,6 @@ body {
     width: auto;
     height: 3rem; 
 }
-
 .card-body {
     display: flex;
     padding: 0;
@@ -49,7 +58,6 @@ body {
 .card-text {
     padding-left: 10px;
 }
-
 .btn-info {
     background-color: beige;
     position: absolute;
@@ -70,15 +78,54 @@ body {
     position: absolute;;
 }
 
-.show {
+
+/*main page*/
+#main-page-div {
+    background-color: rgb(255, 255, 255);
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    /* border-left: 10px double;
+    border-right: 10px double;
+    border-color:rgb(56, 54, 54); */
+}
+#main-header {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+#main-img {
+    margin-bottom: 2rem;
+}
+#img2 {
+    width: 18rem;
+    margin: 10px;
+}
+#img3 {
+    width: 20rem;
+    margin: 10px;
+}
+#img4 {
+    width: 20rem;
+    margin: 10px;
+}
+#img5 {
+    width: 20.6rem;
+    margin: 10px;
+    padding-bottom: 30px;
+}
+#img6 {
+    width: 23rem;
+    margin: 10px;
+    padding-bottom: 30px;
+}
+
+.footer {
+    position: inherit;
+    bottom: 0px;
+    width: 100%;
+    height: 5rem;
+    text-align: center;
     background-color: rgb(42, 41, 41);
-}
-.dropdown-item {
-    color: beige;
-}
-.dropdown-toggle {
-    background-color: rgb(42, 41, 41);
-}
-.dropdown-toggle:hover {
-    background-color: rgb(56, 54, 54);
+    color: white;
 }
