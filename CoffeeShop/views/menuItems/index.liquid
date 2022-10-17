@@ -4,33 +4,106 @@
     <h2 id="menu-header" class="display-5">All Menu</h2>
     <hr>
     <h1 class="menu-names">Coffee</h1>
+    <div class="third-div>">
+        <div class="second-div">
+            <div class="first-img-div">
+                <img id="img-1" class="menu-img" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <p id="img-1" class="img-text">Latte</p>
+                <img id="img-2" class="menu-img" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <p id="img-2" class="img-text">Cappuccino</p>
+                <img id="img-3" class="menu-img" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <p id="img-3" class="img-text">Cortado</p>
+                <img id="img-4" class="menu-img" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <p id="img-4" class="img-text">Espresso</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="third-div-right>">
+        <div class="second-div-right">
+            <div class="first-img-div-right">
+                <img id="img-1-right" class="menu-img-right" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <p id="img-1-right" class="img-text">Macchiato</p>
+                <img id="img-2-right" class="menu-img-right" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <p id="img-2-right" class="img-text">Turkish Coffee</p>
+                <img id="img-3-right" class="menu-img-right" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <p id="img-3-right" class="img-text">Ristretto</p>
+                <img id="img-4-right" class="menu-img-right" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <p id="img-4-right" class="img-text">Flat White</p>
+            </div>
+        </div>
+    </div>
+    {%- comment -%} <div id="first-div-img">
+        <img class="menu-img-block" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+    </div> {%- endcomment -%}
+        {%- comment -%} <img src="https://i.stack.imgur.com/tcX7Gm.jpg">
+        <img src="https://i.stack.imgur.com/tcX7Gm.jpg">
+        <img src="https://i.stack.imgur.com/tcX7Gm.jpg">
+        <img src="https://i.stack.imgur.com/tcX7Gm.jpg">
+        <img src="https://i.stack.imgur.com/tcX7Gm.jpg">
+        <img src="https://i.stack.imgur.com/tcX7Gm.jpg">
+        <img src="https://i.stack.imgur.com/tcX7Gm.jpg"> {%- endcomment -%}
+    
     <div class="row">
+
+        {%- comment -%} if coffee {%- endcomment -%}
         {% for item in items %}
+        {%if item.category == 'coffee'%}
         <div class="card" >
             <h5 class="card-header">{{ item.title }}</h5>
             <div class="card-body">
-                <h5 class="card-title">
+                <h5 class="card-name">
                     {{ item.name }}
                 </h5>
-                <p class="card-text">
+                <p class="card-price">
                     ${{ item.price }}
                 </p>
-                <p class="card-text">
+                <p class="card-category-description">
                     {{ item.description }}
                 </p>
-                <p class="card-text">
+                <p class="card-category-description">
                     {{ item.category }}
                 </p>
                 {%if loggedIn%}
-                <a href="/menu/new" class="btn btn-info">
+                <a href= "/cart/mine" class="btn btn-info">
                     add {{ example.title }} 
                 </a>
                 {%endif%}
             </div>
         </div>
+        {%endif%}
         {% endfor %}
+        {%- comment -%} if desserts {%- endcomment -%}
         <hr>
         <h1 class="menu-names">Desserts</h1>
+        {% for item in items %}
+        {% if item.category == 'dessert'%}
+        
+        <div class="card" >
+            <h5 class="card-header">{{ item.title }}</h5>
+            <div class="card-body">
+                <h5 class="card-name">
+                    {{ item.name }}
+                </h5>
+                <p class="card-price">
+                    ${{ item.price }}
+                </p>
+                <p class="card-category-description">
+                    {{ item.description }}
+                </p>
+                <p class="card-category-description">
+                    {{ item.category }}
+                </p>
+                {%if loggedIn%}
+                <a href= "/cart/mine" class="btn btn-info">
+                    add {{ example.title }} 
+                </a>
+                {%endif%}
+            </div>
+        </div>
+        
+        {%endif%}
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

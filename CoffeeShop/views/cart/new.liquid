@@ -18,8 +18,46 @@
                 name="toStay" 
                 class="form-check-input"
             >
+            <label class="form-label">products: </label>
+            <input 
+                type="text" 
+                name="name" 
+                placeholder="enter here"
+                class="form-control"
+            >
+            <input 
+                type="number" 
+                name="price" 
+                placeholder="enter here"
+                class="form-control"
+            >
+            <input 
+                type="text" 
+                name="description" 
+                placeholder="enter here"
+                class="form-control"
+            >
+            <input 
+                type="text" 
+                name="category" 
+                placeholder="enter here"
+                class="form-control"
+            >
+            
         </fieldset>
         <input type="submit" value="add" class="btn btn-success">
     </form>
 </div>
 {% endblock %}
+<h5 class="card-name">
+                    {{ item.name }}
+                </h5>
+                <p class="card-price">
+                    ${{ item.price }}
+                </p>
+                <p class="card-category-description">
+                    {{ item.description }}
+                </p>
+                <p class="card-category-description">
+                    {{ item.category }}
+                </p>

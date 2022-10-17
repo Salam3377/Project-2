@@ -11,6 +11,18 @@
                 <p class="card-text">
                     owner: {{ item.owner }}
                 </p>
+                <h5>
+                   {{ item.name }}
+                </h5>
+                <p class="card-price">
+                    ${{ item.price }}
+                </p>
+                <p class="card-category-description">
+                    {{ item.description }}
+                </p>
+                <p class="card-category-description">
+                    {{ item.category }}
+                </p>
         {% if item.owner == userId %}
         <div class="btn-group">
 

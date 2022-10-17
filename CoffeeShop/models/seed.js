@@ -7,16 +7,20 @@ const db = mongoose.connection
 
 db.on('open', () => {
     const startMenu = [
-        {name: 'latte', price: 4.25, description: 'test', category: 'coffee'},
-        {name: 'cappuccino', price: 4.25, description: 'test', category: 'coffee'},
-        {name: 'cortado', price: 3.75, description: 'test', category: 'coffee'},
-        {name: 'flat white', price: 4, description: 'test', category: 'coffee'},
-        {name: 'americano', price: 3.25, description: 'test', category: 'coffee'},
-        {name: 'espresso', price: 3.25, description: 'test', category: 'coffee'},
-        {name: 'macchiato', price: 3.50, description: 'test', category: 'coffee'},
-        {name: 'turkish coffee', price: 4.25, description: 'test', category: 'coffee'},
-        {name: 'brew coffee', price: 3.50, description: 'test', category: 'coffee'},
-        {name: 'ristretto', price: 3.50, description: 'test', category: 'coffee'},
+        {name: 'Latte', price: 4.25, description: 'test', category: 'coffee'},
+        {name: 'Cappuccino', price: 4.25, description: 'test', category: 'coffee'},
+        {name: 'Cortado', price: 3.75, description: 'test', category: 'coffee'},
+        {name: 'Flat White', price: 4, description: 'test', category: 'coffee'},
+        {name: 'Americano', price: 3.25, description: 'test', category: 'coffee'},
+        {name: 'Espresso', price: 3.25, description: 'test', category: 'coffee'},
+        {name: 'Macchiato', price: 3.50, description: 'test', category: 'coffee'},
+        {name: 'Turkish coffee', price: 4.25, description: 'test', category: 'coffee'},
+        {name: 'Brew coffee', price: 3.50, description: 'test', category: 'coffee'},
+        {name: 'Ristretto', price: 3.50, description: 'test', category: 'coffee'},
+        {name: 'Affogato', price: 7.25, description: 'test', category: 'dessert'},
+        {name: 'Donut IceCream', price: 8.50, description: 'test', category: 'dessert'},
+        {name: 'Kunefe', price: 12.25, description: 'test', category: 'dessert'},
+        {name: 'Souffle Cake', price: 10.99, description: 'test', category: 'dessert'},
     ]
 
 

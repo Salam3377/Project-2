@@ -1,6 +1,7 @@
 // Import Dependencies
 const express = require('express')
 const MenuItems = require('../models/menuItems')
+const Cart = require('../models/userCart')
 
 
 // Create router
@@ -121,6 +122,24 @@ router.delete('/:id', (req, res) => {
 			res.redirect(`/error?error=${error}`)
 		})
 })
+
+// some madness
+// router.post('/add/:id', (req,res) => {
+// 	const id = req.params.id
+// 	Cart.findById(id)
+// 		.then(elem => {
+// 			elem.items.push(req.body)
+// 			// res.render('cart/new', {elem,id})
+// 			console.log(item)
+// 			return item.save()
+// 		})
+// 		.then(item => {
+// 			res.redirect('cart/mine')
+// 		})
+// 		.catch(err => res.redirect(`/error?error=${err}`))
+// })
+
+
 
 // Export the Router
 module.exports = router

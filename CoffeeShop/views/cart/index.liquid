@@ -7,11 +7,26 @@
         <div class="card" style="width: 18rem;">
             <h5 class="card-header">{{ item.title }}</h5>
             <div class="card-body">
+                <p class="card-text">
+                    owner: {{ item.owner }}
+                </p>
                 <h5 class="card-title">
                     to stay?: {{ item.toStay }}
                 </h5>
                 <p class="card-text">
-                    owner: {{ item.owner }}
+                    produc: {{ item.items }}
+                </p>
+                <h5>
+                   {{ item.items.name }}
+                </h5>
+                <p class="card-price">
+                    ${{ item.price }}
+                </p>
+                <p class="card-category-description">
+                    {{ item.description }}
+                </p>
+                <p class="card-category-description">
+                    {{ item.category }}
                 </p>
                 <a href="/cart/{{ item.id }}" class="btn btn-info">
                     View {{ item.title }}
