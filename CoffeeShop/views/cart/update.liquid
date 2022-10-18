@@ -1,0 +1,26 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+    <div class="container-sm">
+        <form action="/cart/add/{{item.id}}?_method=PUT" method="POST">
+            <fieldset>
+                <label class="form-label">To Stay?: </label>
+                <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="toStay"
+                >
+                <input 
+                type="text" 
+                name="items" 
+                class="form-control"
+            >
+            </fieldset>
+            <input
+                class="btn btn-success"
+                type="submit"
+                value="add to Cart"
+            >
+        </form>
+    </div>
+{% endblock %}
+{%- comment -%} something on this page needs to be done, or not {%- endcomment -%}

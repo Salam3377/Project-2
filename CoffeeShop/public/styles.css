@@ -8,6 +8,9 @@ body {
 #cart {
     padding: 1rem;
 }
+#cart-card {
+    height: 5rem;
+}
 .nav-link {
     padding: 1rem;
 }

@@ -7,9 +7,6 @@ const User = require('./user')
 // destructure the schema and model constructors from mongoose
 const { Schema, model } = mongoose
 
-const ObjectID = Schema.Types.ObjectId
-
-
 
 const menuItemsSchema = new Schema(
 	{
@@ -29,7 +26,7 @@ const menuItemsSchema = new Schema(
 	{ timestamps: true }
 )
 
-const MenuItems = model('Menu', menuItemsSchema)
+const MenuItems = model('MenuItem', menuItemsSchema)
 
 /////////////////////////////////
 // Export our Model

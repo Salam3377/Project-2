@@ -1,45 +1,33 @@
 {% layout 'layout.liquid'%}
 {% block content %}
 <div>
-    <h2 class="display-6">cart </h2>
+    <h2 class="display-6">cart</h2>
     <div class="row">
-        {% for item in items %}
-        <div class="card" style="width: 18rem;">
-            <h5 class="card-header">{{ item.title }}</h5>
+        {% for cart in carts %}
+        <div class="card" id="cart-card" style="width: 18rem;">
+            <h5 class="card-header">{{ cart.title }}</h5>
             <div class="card-body">
-                <p class="card-text">
-                    owner: {{ item.owner }}
-                </p>
-                <h5 class="card-title">
-                    to stay?: {{ item.toStay }}
-                </h5>
-                <p class="card-text">
-                    produc: {{ item.items }}
-                </p>
-                <h5>
-                   {{ item.items.name }}
-                </h5>
-                <p class="card-price">
-                    ${{ item.price }}
-                </p>
-                <p class="card-category-description">
-                    {{ item.description }}
-                </p>
-                <p class="card-category-description">
-                    {{ item.category }}
-                </p>
-                <a href="/cart/{{ item.id }}" class="btn btn-info">
-                    View {{ item.title }}
-                </a>
                 {%- comment -%} <p class="card-text">
-                    Amount: {{ example.amount }}
+                    owner: {{ cart. }}
                 </p> {%- endcomment -%}
-                {%- comment -%} <a href="/cart/{{ item.id }}" class="btn btn-info">
-                    View {{ example.title }}
-                </a> {%- endcomment -%}
+                <h5 class="card-title">
+                    to stay?:
+                    {%if cart.toStay%}
+                     yes 
+                     {%else%}
+                     no 
+                     {%endif%}
+                </h5>
+                {%- comment -%} something here need to be done i guess {%- endcomment -%}
+                
+
+                <a href="cart/{{ cart.id }}" class="btn btn-info">
+                    View {{ cart.title }}
+                </a>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
 {% endblock %}
+

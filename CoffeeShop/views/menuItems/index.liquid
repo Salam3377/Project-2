@@ -7,13 +7,13 @@
     <div class="third-div>">
         <div class="second-div">
             <div class="first-img-div">
-                <img id="img-1" class="menu-img" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <img id="img-1" class="menu-img" src="https://www.caffesociety.co.uk/assets/recipe-images/latte-small.jpg">
                 <p id="img-1" class="img-text">Latte</p>
-                <img id="img-2" class="menu-img" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <img id="img-2" class="menu-img" src="https://cdn-s-www.ledauphine.com/images/2D239879-5350-4E09-8DE0-CDB39C250C69/NW_raw/tous-les-cafes-ont-pour-base-une-ou-deux-doses-d-expresso-photo-by-wenhao-ryan-on-unsplash-1646236309.jpg">
                 <p id="img-2" class="img-text">Cappuccino</p>
-                <img id="img-3" class="menu-img" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <img id="img-3" class="menu-img" src="https://cdn.shopify.com/s/files/1/0258/0329/2747/products/Cortado_1afd1110-5cd2-43f1-ae44-d99e0489390f_300x300.jpg?v=1580088633">
                 <p id="img-3" class="img-text">Cortado</p>
-                <img id="img-4" class="menu-img" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <img id="img-4" class="menu-img" src="https://www.travelgluttons.com/wp-content/uploads/2014/12/espresso.jpeg">
                 <p id="img-4" class="img-text">Espresso</p>
             </div>
         </div>
@@ -22,28 +22,18 @@
     <div class="third-div-right>">
         <div class="second-div-right">
             <div class="first-img-div-right">
-                <img id="img-1-right" class="menu-img-right" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <img id="img-1-right" class="menu-img-right" src="https://coffeeaffection.com/wp-content/uploads/2019/08/Espresso-macchiato.jpeg">
                 <p id="img-1-right" class="img-text">Macchiato</p>
-                <img id="img-2-right" class="menu-img-right" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <img id="img-2-right" class="menu-img-right" src="https://static.wixstatic.com/media/283f9b_7a81c3bf1d6d41a1b487d2511e263ef1~mv2.jpg/v1/fit/w_1000%2Ch_1000%2Cal_c%2Cq_80/file.jpg">
                 <p id="img-2-right" class="img-text">Turkish Coffee</p>
-                <img id="img-3-right" class="menu-img-right" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <img id="img-3-right" class="menu-img-right" src="http://cdn.shopify.com/s/files/1/1135/9342/articles/Ristretto_1200x1200.jpg?v=1621341019">
                 <p id="img-3-right" class="img-text">Ristretto</p>
-                <img id="img-4-right" class="menu-img-right" src="https://i.stack.imgur.com/tcX7Gm.jpg">
+                <img id="img-4-right" class="menu-img-right" src="https://d2lswn7b0fl4u2.cloudfront.net/photos/pg-a-cup-of-flat-white-coffee-1630845655.jpg">
                 <p id="img-4-right" class="img-text">Flat White</p>
             </div>
         </div>
     </div>
-    {%- comment -%} <div id="first-div-img">
-        <img class="menu-img-block" src="https://i.stack.imgur.com/tcX7Gm.jpg">
-    </div> {%- endcomment -%}
-        {%- comment -%} <img src="https://i.stack.imgur.com/tcX7Gm.jpg">
-        <img src="https://i.stack.imgur.com/tcX7Gm.jpg">
-        <img src="https://i.stack.imgur.com/tcX7Gm.jpg">
-        <img src="https://i.stack.imgur.com/tcX7Gm.jpg">
-        <img src="https://i.stack.imgur.com/tcX7Gm.jpg">
-        <img src="https://i.stack.imgur.com/tcX7Gm.jpg">
-        <img src="https://i.stack.imgur.com/tcX7Gm.jpg"> {%- endcomment -%}
-    
+
     <div class="row">
 
         {%- comment -%} if coffee {%- endcomment -%}
@@ -65,8 +55,8 @@
                     {{ item.category }}
                 </p>
                 {%if loggedIn%}
-                <a href= "/cart/mine" class="btn btn-info">
-                    add {{ example.title }} 
+                <a href= "cart/add/{{item.id}}" class="btn btn-info">
+                    add 
                 </a>
                 {%endif%}
             </div>
@@ -96,7 +86,7 @@
                 </p>
                 {%if loggedIn%}
                 <a href= "/cart/mine" class="btn btn-info">
-                    add {{ example.title }} 
+                    add  
                 </a>
                 {%endif%}
             </div>

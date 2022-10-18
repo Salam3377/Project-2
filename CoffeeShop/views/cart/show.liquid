@@ -3,35 +3,22 @@
 <div class="container-md">
     <article>
         <h2>
-            <h5 class="card-header">{{ item.title }}</h5>
+            <h5 class="card-header">{{ cart.title }}</h5>
             <div class="card-body">
-                <h5 class="card-title">
-                    to stay?: {{ item.toStay }}
                 </h5>
-                <p class="card-text">
-                    owner: {{ item.owner }}
-                </p>
-                <h5>
-                   {{ item.name }}
-                </h5>
-                <p class="card-price">
-                    ${{ item.price }}
-                </p>
-                <p class="card-category-description">
-                    {{ item.description }}
-                </p>
-                <p class="card-category-description">
-                    {{ item.category }}
-                </p>
-        {% if item.owner == userId %}
+                <p>Delete order? </p>
+                
+        {%- comment -%} {% if cart.owner == userId %} {%- endcomment -%}
         <div class="btn-group">
 
-            <a href="/cart/{{ item.id }}/edit" class="btn btn-primary">Edit</a>
-            <form action="/cart/{{ item.id }}?_method=DELETE" method="POST">
+            <a href="/cart/{{ cart.id }}/edit" class="btn btn-primary">Edit</a>
+            <form action="/cart/{{ cart.id }}?_method=DELETE" method="POST">
                 <input type="submit" value="Delete" class="btn btn-danger">
             </form>
         </div>
-        {% endif %}
+        {%- comment -%} {% endif %} {%- endcomment -%}
     </article>
 </div>
 {% endblock %}
+
+{%- comment -%} idk which user owns so commented out if statement for now {%- endcomment -%}

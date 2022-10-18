@@ -7,26 +7,20 @@ const User = require('./user')
 //const menuItemsSchema = require('./menuItems')
 // destructure the schema and model constructors from mongoose
 const { Schema, model } = mongoose
-const ObjectID = Schema.Types.ObjectId
+
 const userCartSchema = new Schema(
 	{
 		owner: {
-            type: Schema.Types.ObjectId,
-            required: true,
+            type: Schema.Types.ObjectId, 
             ref: 'User'
         },
         toStay: Boolean,
         items: [
-            {
-                itemId: {
-                 type: ObjectID,
-                 ref: 'MenuItems',
-                 required: true
-              },
-                name: String,
-                price: Number
+            { 
+                type: Schema.Types.ObjectId,
+                ref: 'MenuItem',
                }
-        ],
+        ]
 	},
 	{ timestamps: true }
 )

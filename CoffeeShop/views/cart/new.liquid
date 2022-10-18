@@ -4,13 +4,6 @@
     <form action="/cart" method="POST">
         <fieldset>
             <legend>Create New items</legend>
-            <label class="form-label">Owner: </label>
-            <input 
-                type="text" 
-                name="owner" 
-                placeholder="enter here"
-                class="form-control"
-            >
             
             <label class="form-label">to stay:</label>
             <input 
@@ -18,46 +11,15 @@
                 name="toStay" 
                 class="form-check-input"
             >
-            <label class="form-label">products: </label>
-            <input 
+            {%- comment -%} <input 
                 type="text" 
-                name="name" 
-                placeholder="enter here"
+                name="items" 
                 class="form-control"
             >
-            <input 
-                type="number" 
-                name="price" 
-                placeholder="enter here"
-                class="form-control"
-            >
-            <input 
-                type="text" 
-                name="description" 
-                placeholder="enter here"
-                class="form-control"
-            >
-            <input 
-                type="text" 
-                name="category" 
-                placeholder="enter here"
-                class="form-control"
-            >
-            
+             {%- endcomment -%}
         </fieldset>
         <input type="submit" value="add" class="btn btn-success">
     </form>
 </div>
 {% endblock %}
-<h5 class="card-name">
-                    {{ item.name }}
-                </h5>
-                <p class="card-price">
-                    ${{ item.price }}
-                </p>
-                <p class="card-category-description">
-                    {{ item.description }}
-                </p>
-                <p class="card-category-description">
-                    {{ item.category }}
-                </p>
+{%- comment -%} not needed {%- endcomment -%}
