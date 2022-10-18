@@ -1,6 +1,7 @@
 ////////////////////
 //  Dependencies  //
 ////////////////////
+// Nit: choose either double or single quotes
 require("dotenv").config() // make env variables available
 const express = require("express")
 const middleware = require('./utils/middleware')
@@ -8,12 +9,13 @@ const ExampleRouter = require('./controllers/example')
 const menuItemsRouter = require('./controllers/menuItemsControllers')
 const userCartRouter = require('./controllers/userCartControllers')
 const UserRouter = require('./controllers/user')
+// Nit: remove unused User import
 const User = require("./models/user")
 // SEE MORE DEPENDENCIES IN ./utils/middleware.js
 // user and resource routes linked in ./utils/middleware.js
 
 
-
+// This comment does not match what it's commenting on. Change it or remove it
 //////////////
 //Creating some vars for pages without schema
 ///////////

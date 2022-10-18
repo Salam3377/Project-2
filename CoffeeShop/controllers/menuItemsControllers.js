@@ -1,6 +1,7 @@
 // Import Dependencies
 const express = require('express')
 const MenuItems = require('../models/menuItems')
+// Nit: can remove usused Cart model
 const Cart = require('../models/userCart')
 
 
@@ -63,6 +64,7 @@ router.post('/', (req, res) => {
 	req.body.owner = req.session.userId
 	MenuItems.create(req.body)
 		.then(items => {
+			// Nit: remove console.log
 			console.log('this was returned from create', items)
 			res.redirect('/menu')
 		})
@@ -115,6 +117,7 @@ router.get('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
 	const itemsId = req.params.id
 	MenuItems.findByIdAndRemove(itemsId)
+	// Nit: can remove unused `items` here and just pass nothing () => res.redirect('/menu')
 		.then(items => {
 			res.redirect('/menu')
 		})

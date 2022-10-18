@@ -51,6 +51,7 @@ router.post('/', (req,res) => {
     req.body.owner = req.session.userId
 	Cart.create(req.body)
 		.then(carts => {
+			// Nit: remove console.log
 			console.log('this was returned from create', carts)
 			res.redirect('/cart')
 		})
@@ -88,26 +89,30 @@ router.get('/toCart/:id', (req, res) => {
 router.get('/add/:cartId', (req, res) => {
 	const cartId = req.params.cartId
 	req.body.toStay = req.body.toStay === 'on' ? true : false
+	// Nit: remove console.log
 	console.log("in put at cartId req.body is", req.body)
 // 	// i need to get the item Id from the req body somehow attach item id
 // 	//i e liquid button that makes this req
 	MenuItems.findById(cartId)
 		.then(items => {
-			console.log(' check info', items);
+			// Nit: remove console.log
+			console.log(' check info', items)
 			Cart.findOne()
-				.then(carts => {
-				if(req.session.userId == carts.owner) {
-					return carts
-				}
-			})
-				.then(carts => {
-						console.log('here is: ', carts)
-						carts.items.push(items) // after push in that ID that i got from the req body
-						carts.save()
-					})
-		// .then(carts => {
-		// 	res.redirect('/menu/') // change this line
-		// })
+				.then((carts) => {
+					if (req.session.userId == carts.owner) {
+						return carts
+					}
+				})
+				.then((carts) => {
+					// Nit: remove console.log
+					console.log('here is: ', carts)
+					carts.items.push(items) // after push in that ID that i got from the req body
+					// Should return here. Best practice for Mongoose `.save()`
+					carts.save()
+				})
+			// .then(carts => {
+			// 	res.redirect('/menu/') // change this line
+			// })
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
@@ -118,6 +123,7 @@ router.get('/add/:cartId', (req, res) => {
 router.delete('/:id', (req, res) => {
 	const Id = req.params.id
 	Cart.findByIdAndRemove(Id)
+	// Nit: can remove unused `carts`
 		.then(carts => {
 			res.redirect('/cart/mine')
 		})
