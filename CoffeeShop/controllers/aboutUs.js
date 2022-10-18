@@ -7,6 +7,7 @@ const express = require('express')
 
 
 router.get('/', (req, res) => {
+	// Nit: can remove unused `userId`
 	const { username, userId, loggedIn } = req.session
 	res.render('aboutUs', { username, loggedIn })
 })

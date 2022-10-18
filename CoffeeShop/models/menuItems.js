@@ -15,6 +15,7 @@ const menuItemsSchema = new Schema(
         description: String,
         category: {
             type: String,
+			// Nice enum here!!
             enum: ['coffee','food','dessert']
         },
 
